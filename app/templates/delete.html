@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="" novalidate>
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4" id ="register-title">Delete Business</legend>
+            <div class="form-group">
+              {{ form.id.label(class="form-control-label") }}
+              {% if form.id.errors %}
+                  {{ form.id(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.id.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+                {% else %}
+              {{ form.id(class="form-control form-control-lg") }}
+              {% endif %}
+            </div>
+          </fieldset>
+          <div class="form-group btn">
+              {{ form.submit(class="btn btn-outline-danger") }}
+          </div>
+        </form>
+        </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" id ="register-title">Give us a review about the business and Service we offer</legend>
+                <div class="form-group">
+            {{ form.review_headline.label(class="form-control-label") }}
+            {% if form.review_headline.errors %}
+                {{ form.review_headline(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.review_headline.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+              {% else %}
+            {{ form.review_headline(class="form-control form-control-lg") }}
+            {% endif %}
+            {{ form.comment.label(class="form-control-label") }}
+            {% if form.comment.errors %}
+                {{ form.comment(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.comment.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+              {% else %}
+            {{ form.comment(class="form-control form-control-lg") }}
+            {% endif %}
+            
+            <div class="form-group btn">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+</div>
+{% endblock content %}

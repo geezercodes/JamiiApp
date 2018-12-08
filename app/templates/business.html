@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4" id ="register-title">{{ legend }}</legend>
+                <div class="form-group">
+            {{ form.BusinessName.label(class="form-control-label") }}
+            {% if form.BusinessName.errors %}
+                {{ form.BusinessName(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.BusinessName.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+              {% else %}
+            {{ form.BusinessName(class="form-control form-control-lg") }}
+            {% endif %}
+            {{ form.BusinessLocation.label(class="form-control-label") }}
+            {% if form.BusinessLocation.errors %}
+                {{ form.BusinessLocation(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.BusinessLocation.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+              {% else %}
+            {{ form.BusinessLocation(class="form-control form-control-lg") }}
+            {% endif %}
+            {{ form.date_established.label(class="form-control-label")  }}
+            {% if form.date_established.errors %}
+                {{ form.date_established(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.date_established.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+              {% else %}
+            {{ form.date_established(class="form-control form-control-lg") }}
+            {% endif %}
+            {{ form.business_description.label(class="form-control-label") }}
+            {{ form.business_description(class="form-control form-control-lg") }}
+            <div class="form-group btn">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have A registered Business? <a class="ml-2" href="{{ url_for('available') }}">View Business</a>
+            </small>
+        </div>
+</div>
+{% endblock content %}

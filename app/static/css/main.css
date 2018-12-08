@@ -1,0 +1,121 @@
+/* global settings */
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #fafafa;
+  color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+  padding: 0;
+  margin: 0;
+}
+.content-section{
+  width: 450px;
+  margin: auto;
+}
+
+/* nav bar */
+.bg-steel {
+  background-color: #3D85FF;
+  border-bottom: 2px solid orange;
+}
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+  text-transform: uppercase;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: orange;
+  font-weight: bold;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+/* css stylings for home page */
+.home{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../media/images/image_1.jpg');
+  min-height: 500px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+#register-title{
+  padding-top: 75px;
+}
+.main-heading{
+  text-align: center;
+  padding-top: 200px;
+  font-size: 35px;
+}
+.main-heading h1{
+  color: #fff;
+  font-weight: bold;
+}
+.main-heading h2{
+  color: #fff;
+  padding-top: 16px;
+  font-weight: bold;
+}
+.btn {
+  padding-top: 12px;
+}
+/* how it works section */
+#head-home{
+  text-align: center;
+  padding-top: 12px;
+  color: orange;
+}
+.box{
+    width: 250px;
+    height: 180px;
+    background-color: cyan;
+    margin-top: 50px;
+}
+p{
+    text-align: center;
+    padding-top: 10px;
+}
+.box1{
+    float: left;
+    margin-right: 100px;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+.box2{
+    float: left;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+    margin-right: 100px;
+}
+.box3{
+    float: left;
+    box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: all ease-in-out 300ms;
+}
+.box1:hover, .box2:hover, .box3:hover{
+    box-shadow: 0px 37px 20px -20px rgba(0,0,0,0.2);
+    transform: translate(0px, -10px) scale(1.2);
+}
+.box h2{
+  padding-top:10px;
+  text-align: center;
+}
+.content-bs{
+  padding-top: 150px;
+  width: 900px;
+  margin: auto;
+}
+.content-bs h3{
+  margin-top: 18px;
+}
+.content-bs h4{
+  border-bottom: 1px solid grey;
+}

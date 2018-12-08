@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+
+  {% for review in reviews %}
+  <div class="jumbotron">
+  <h3>Review Headline:  {{review.review_headline}}</h3>
+  <h4>Written by: {{ current_user }}</h4>
+  <h4>Business reviewed: {{review.business_review.BusinessName}}</h4>
+  <h6>Comment:  {{review.comment}}</h6>
+  </div>
+  {% endfor %}
+
+
+{% endblock %}
