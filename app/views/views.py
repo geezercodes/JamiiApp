@@ -54,7 +54,7 @@ def logout():
 def BusinessFunction():
     form = BusinessForm()
     if form.validate_on_submit():
-        business = Business(BusinessName = form.BusinessName.data, owner = current_user, Businesslocation = form.BusinessLocation.data,
+        business = Business(BusinessName = form.BusinessName.data, BusinessLocation = form.BusinessLocation.data,
             date_established = form.date_established.data, business_description = form.business_description.data )
         db.session.add(business)
         db.session.commit()
@@ -73,9 +73,7 @@ def BusinessFunction():
 def available():
     form = BusinessSearchForm()
     business = Business.query.all()
-    location = Business.query.filter_by(BusinessLocation = form.BusinessLocation.data).all()
-    if location:
-        return redirect('location.html', location = location, form = form)
+
 
     return render_template('success.html', business = business, form = form)
 
@@ -116,7 +114,7 @@ def update_business(business_id):
 @app.route('/business-delete/<int:business_id>', methods = ['POST'])
 @login_required
 def deletebusiness(business_id):
-    qry = db_session.query(Business).filter(Business.id==id)
+    qry = db.session.query(Business).filter(Business.id==id)
         
     business = qry.first()
     if Business:

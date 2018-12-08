@@ -7,10 +7,9 @@
 {% block content %}
 <div class="content-bs">
 <h1>Jamii Businesses</h1>
-{% for business in Business%}
+{% for business in business%}
 <div class="jumbotron">
-<h3><a href="{{ url_for('single_business', business_id = business.id) }}">Business Name: {{ business.BusinessName }}</a></h3><br>
-<h3>Business Owner: {{ business.User.username }}</h3><br>
+<h3><a href="{{ url_for('single_business', business_id = business.id) }}">Business Name: {{ business.BusinessName }}</a></h3>
 <h3> Business Located at: {{ business.BusinessLocation }}</h3><br>
 <h3>Business established on: {{ business.date_established.strftime('%d-%m-%Y') }}</h3><br>
 <h4 class="below-desc">Description about the business: {{ business.business_description }}</h4><br>

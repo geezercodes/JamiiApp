@@ -12,12 +12,12 @@
 <h3>BusinessLocation: {{ business.BusinessLocation }}</h3><br>
 <h3>Date_Established: {{ business.date_established }}</h3><br>
 <h4>business_description: {{ business.business_description }}</h4>
-{% if business.owner == current_user %}
 <div>
   <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('update_business', business_id = business.id) }}">Update</a>
+  <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('review', business_id = business.id) }}">Review</a>
   <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal"">Delete</button>
 </div>
-{% endif %}
+
 </div>
 
 

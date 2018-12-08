@@ -11,16 +11,16 @@
         <fieldset class="form-group">
             <legend class="border-bottom mb-4" id ="register-title">Delete Business</legend>
             <div class="form-group">
-              {{ form.id.label(class="form-control-label") }}
-              {% if form.id.errors %}
-                  {{ form.id(class="form-control form-control-lg is-invalid") }}
+              {{ form.label(class="form-control-label") }}
+              {% if form.errors %}
+                  {{ form(class="form-control form-control-lg is-invalid") }}
                   <div class="invalid-feedback">
                       {% for error in form.id.errors %}
                           <span>{{ error }}</span>
                       {% endfor %}
                   </div>
                 {% else %}
-              {{ form.id(class="form-control form-control-lg") }}
+              {{ form(class="form-control form-control-lg") }}
               {% endif %}
             </div>
           </fieldset>
